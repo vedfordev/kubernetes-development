@@ -13,7 +13,7 @@ nodeGroups:
     instanceType: t2.micro
     #ami: "ami-0522ab6e1ddcc7055"
     amiFamily: Ubuntu2204   # need to check
-    instancePrefix: "v1service" # need to check
+    instancePrefix: "v1service" # v1service-vedant-cluster-v1service-Node
     desiredCapacity: 1
     minSize: 1
     maxSize: 1
