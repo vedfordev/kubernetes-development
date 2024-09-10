@@ -1,0 +1,42 @@
+kind: Deployment
+
+apiVersion: apps/v1
+
+metadata:
+  name: v2deployment
+  labels:
+    environment: prod
+    app: v2
+  annotations:
+    kubernetes.io/autoupdate-spec: "work for v2 releases"
+
+spec:
+  replicas: 1
+  minReadySeconds: 30
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      environment: prod
+      app: v2
+  template:
+    metadata:
+      name: v2pod
+      labels:
+        environment: prod
+        app: v2
+    spec:
+      nodeSelector:
+        environment: prod
+        app: v2
+      containers:
+        - name: v1container
+          image: vedfordocker/myapp:v2         # need to change as per avni dockerhub image
+          ports:
+            - containerPort: 8088
+          envFrom:
+            - configMapRef:
+                name: my-config
