@@ -39,5 +39,3 @@ nodeGroups:
       environment: prod
       app: v2
 
-iam:
-  withOIDC: true
