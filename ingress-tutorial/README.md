@@ -8,6 +8,7 @@
 2. ssh into ec2 and follow below steps
 
 ```shell
+sudo apt-get update
 mkdir aws-cli
 cd aws-cli
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -25,8 +26,9 @@ aws configure
 ```shell
 sudo apt-get update
 sudo apt install docker.io
-docker ps
+sudo docker ps
 sudo chown $USER /var/run/docker.sock
+docker ps
 ```
 
 5. Install kubectl
@@ -49,13 +51,14 @@ eksctl version
 cd
 mkdir mykubework
 cd mykubework
-git clone git@github.com:vedfordev/kubernetes-development.git
+git clone https://github.com/vedfordev/kubernetes-development.git
 ```
 
 8. initialise cluster it will take time
 ```shell
-cd ingress-tutorial
-eksctl create cluster -f cluster.yaml 
+cd kubernetes-development/ingress-tutorial/
+sudo eksctl create cluster -f cluster.yml --dry-run
+eksctl create cluster -f cluster.yml 
 ```
 
 9. install ingress
