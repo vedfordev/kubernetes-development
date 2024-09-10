@@ -1,0 +1,23 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: v1pod
+  labels:
+    environment: prod
+    app: v1
+
+spec:
+  nodeSelector:
+    environment: prod
+    app: v1
+  containers:
+    - name: v1container
+      image: vedfordocker/myapp:v1         # need to change as per avni dockerhub image
+      env:
+        - name: MY_ENV_VAL
+          valueFrom:
+            configMapKeyRef:
+              name: my-config
+              key: env_val

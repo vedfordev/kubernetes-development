@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: my-config
 data:
-  MY_ENV_VAL: "hello from eks"
+  env_val: "hello from eks"

@@ -31,12 +31,16 @@ spec:
     spec:
       nodeSelector:
         environment: prod
-        app: v2
+        app: v1
       containers:
-        - name: v1container
+        - name: v2container
           image: vedfordocker/myapp:v2         # need to change as per avni dockerhub image
           ports:
             - containerPort: 8088
-          envFrom:
-            - configMapRef:
+          env:
+          - name: MY_ENV_VAL
+            valueFrom:
+              configMapKeyRef:
                 name: my-config
+                key: env_val
+                
