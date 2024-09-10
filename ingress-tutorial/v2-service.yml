@@ -16,4 +16,4 @@ spec:
   ports:
     - protocol: TCP
       port: 8088        # Service port
-      targetPort: 8088  # Target port on the Superset container
+      targetPort: 8088  # Target port on the container
