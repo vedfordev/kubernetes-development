@@ -4,6 +4,7 @@ apiVersion: apps/v1
 
 metadata:
   name: v2deployment
+  namespace: v2ns
   labels:
     environment: prod
     app: v2
@@ -31,7 +32,7 @@ spec:
     spec:
       nodeSelector:
         environment: prod
-        app: v1
+        app: v1    # selected v1 becuse we have only one cluster 
       containers:
         - name: v2container
           image: vedfordocker/myapp:v2         # need to change as per avni dockerhub image

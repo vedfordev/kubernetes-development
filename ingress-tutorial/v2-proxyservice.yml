@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: v2-proxyservice
+  namespace: ingress-nginx
+spec:
+  type: ExternalName
+  externalName: v2-service.v2ns.svc.cluster.local

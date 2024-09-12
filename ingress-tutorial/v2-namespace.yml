@@ -1,0 +1,9 @@
+kind: Namespace
+
+apiVersion: v1
+
+metadata:
+  name: v2ns
+  labels:
+    environment: prod
+    app: v2

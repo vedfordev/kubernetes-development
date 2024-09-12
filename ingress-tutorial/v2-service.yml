@@ -4,6 +4,7 @@ kind: Service
 
 metadata:
   name: v2-service
+  namespace: v2ns
   labels:
     app: superset
     environment: prod

@@ -4,6 +4,7 @@ kind: Pod
 
 metadata:
   name: v1pod
+  namespace: mynamespace
   labels:
     environment: prod
     app: v1

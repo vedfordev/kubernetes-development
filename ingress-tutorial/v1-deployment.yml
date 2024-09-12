@@ -4,6 +4,7 @@ apiVersion: apps/v1
 
 metadata:
   name: v1deployment
+  namespace: v1ns
   labels:
     environment: prod
     app: v1

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+  namespace: v2ns
+data:
+  env_val: "hello from eks"

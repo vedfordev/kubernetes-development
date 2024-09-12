@@ -4,12 +4,14 @@ kind: Service
 
 metadata:
   name: v1-service
+  namespace: v1ns
   labels:
     app: superset
     environment: prod
 
 spec:
   type: ClusterIP
+
   selector:
     app: v1
     environment: prod
