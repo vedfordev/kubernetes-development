@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "localhost"    # give host name
+    - host: "/"    # give host name
       http:
         paths:
           - pathType: Prefix
@@ -18,7 +18,7 @@ spec:
                 name: v1-service
                 port:
                   number: 8088       # service port no
-    - host: "localhost"    # give host name
+    - host: "/"    # give host name
       http:
         paths:
           - pathType: Prefix
